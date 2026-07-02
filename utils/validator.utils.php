@@ -12,3 +12,10 @@ function unique(array $datas,string $value,array &$errors,string $errorUnique,st
         }
     }
 }
+
+function positive(int $value, array &$errors, string $errorMessage, string $fieldName): void
+{
+    if ($value <= 0) {
+        $errors[$fieldName]['positive'] = $errorMessage;
+    }
+}
