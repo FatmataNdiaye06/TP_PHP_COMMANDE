@@ -24,8 +24,14 @@ function saveClient(array &$clients): void
     $clients[] = $newClient;
 }
 
+function listerClientsSansCommandeAction(array $clients, array $commandes): void
+{
+    $clientsSansCommande = getClientsSansCommande($clients, $commandes);
+    ListeClients($clientsSansCommande);
+}
 function ajouterClientAction(array &$clients): void
 {
     saveClient($clients);
+    listeClients($clients);
 }
 
